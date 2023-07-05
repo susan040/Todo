@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/data/data.dart';
+import 'package:todo/orders.dart';
 
 import 'model/model.dart';
 
@@ -38,6 +39,62 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        shadowColor: Colors.black,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20, left: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: const DecorationImage(
+                  image: AssetImage(
+                    "assets/images/me.jpg"
+                  )
+                  )),
+                ),
+                const SizedBox(height: 10),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Susan Thapa", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 5),
+                    Text("susan******@gmail.com", style: TextStyle(fontSize: 11, color: Colors.grey))
+                    ],
+                  ),
+                const SizedBox(height: 16),
+                    
+                const Padding(
+                  padding: EdgeInsets.only(right: 20, bottom: 20),
+                  child: Divider(
+                    color: Color.fromARGB(255, 157, 157, 157),
+                  ),
+                ),
+              
+                Row(
+                  children: [
+                    const Icon(Icons.home_outlined),
+                    const SizedBox(width: 15),
+                    TextButton(
+                      onPressed: (){
+                        Navigator.push(context,
+                        MaterialPageRoute(builder:(context){
+                          return const Order();
+                        }));
+                      }, 
+                      child: const Text("Order", style: TextStyle(fontWeight: FontWeight.bold)))
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
