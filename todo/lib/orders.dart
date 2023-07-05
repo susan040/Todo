@@ -34,7 +34,7 @@ class Orders extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 15, top: 20, right: 15),
+          padding: const EdgeInsets.only(left: 12, top: 20, right: 12),
           child: Row(
             children: [
               Container(
@@ -83,9 +83,9 @@ class Orders extends StatelessWidget {
                         children: [
                           const Text("Paid", style: TextStyle(fontSize: 16, color: Colors.grey)),
                           Text(price, style: const TextStyle(fontSize: 16, color: Colors.red)),
-                          const SizedBox(width: 30),
+                          const SizedBox(width: 22),
                           SizedBox(
-                            width: 110,
+                            width: 120,
                             height: 30,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
